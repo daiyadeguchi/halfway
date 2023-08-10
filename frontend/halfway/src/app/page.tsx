@@ -4,7 +4,7 @@ import type { NextPage } from 'next';
 import { useMemo } from 'react';
 
 const Home: NextPage = () => {
-  const libraries = useMemo(() => ['places'], []);
+  const libraries: string[] = useMemo(() => ['places'], []);
   const mapCenter = useMemo(
     () => ({ lat: 35.652832, lng: 139.839478 }),
     []
@@ -12,7 +12,6 @@ const Home: NextPage = () => {
 
   const mapOptions = useMemo<google.maps.MapOptions> (
     () => ({
-      disableDefaultUI: true,
       clickableIcons: true,
       scrollwheel: false,
     }),
@@ -31,7 +30,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <GoogleMap
-        options={{ scrollwheel:false }}
+        options={mapOptions}
         zoom={14}
         center={mapCenter}
         mapTypeId={google.maps.MapTypeId.ROADMAP}
