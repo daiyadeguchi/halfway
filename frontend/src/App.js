@@ -3,6 +3,7 @@ import { Nav, Navbar, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Link } from "react-router-dom";
+import SidebarSearchField from "./Components/Sidebar";
 
 const App = () => {
   return (
@@ -19,6 +20,11 @@ const App = () => {
             </Container>
           </Navbar>
         </header>
+        <Container>
+          <div className="sidebar-search-field">
+            <SidebarSearchField />
+          </div>
+        </Container>
         <Container>
           <div className="wrapper">
             <Routes>
