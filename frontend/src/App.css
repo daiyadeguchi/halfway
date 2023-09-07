@@ -3,9 +3,24 @@
 }
 
 .App-header {
-  background-color: #282C34;
+  background-color: #404040;
   display: flex;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.nav-link {
+  background-color: #404040;
+  color: white;
+}
+
+.sidebar {
+  background-color: #404040;
+  margin: 0;
+  padding: 0;
+  width: 40%;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
 }

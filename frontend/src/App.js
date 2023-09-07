@@ -10,7 +10,7 @@ const App = () => {
     <Router>
       <div className="App">
         <header className="App-header">
-          <Navbar bg="dark" variant="dark">
+          <Navbar>
             <Container>
               <Navbar.Brand>
                 <Link to={"/"} className="nav-link">
