@@ -15,7 +15,7 @@
   color: white;
 }
 
-.sidebar {
+.sidebar-search-field {
   background-color: #404040;
   margin: 0;
   padding: 0;
@@ -23,4 +23,20 @@
   position: fixed;
   height: 100%;
   overflow: auto;
+}
+
+.sidebar {
+  width: 50%;
+  height: 100%;
+  margin: auto;
+  position: relative;
+}
+
+form {
+  position: absolute;
+  top: 30%;
+}
+
+input {
+  margin-bottom: 20px;
 }

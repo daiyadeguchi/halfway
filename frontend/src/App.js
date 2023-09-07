@@ -1,8 +1,8 @@
 import React from "react";
-import { Nav, Navbar, Container } from "react-bootstrap";
+import { Navbar, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
-import { BrowserRouter as Router, Routes, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import SidebarSearchField from "./Components/Sidebar";
 
 const App = () => {
@@ -20,17 +20,11 @@ const App = () => {
             </Container>
           </Navbar>
         </header>
-        <Container>
+        <body>
           <div className="sidebar-search-field">
             <SidebarSearchField />
           </div>
-        </Container>
-        <Container>
-          <div className="wrapper">
-            <Routes>
-            </Routes>
-          </div> 
-        </Container>
+        </body>
       </div>
     </Router>
   )
