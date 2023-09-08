@@ -10,7 +10,7 @@ const SidebarSearchField = () => {
   return (
     <div className="sidebar">
         <form onSubmit={handleSubmit}>
-          <input type="text" value={postal} />
+          <input type="text" />
           <input type="submit" value="FIND" />
         </form>
     </div>
