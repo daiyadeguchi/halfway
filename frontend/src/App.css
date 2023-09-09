@@ -19,10 +19,7 @@
   background-color: #404040;
   margin: 0;
   padding: 0;
-  width: 40%;
-  position: fixed;
   height: 100%;
-  overflow: auto;
 }
 
 .sidebar {
@@ -40,4 +37,10 @@ form {
 input {
   margin-bottom: 20px;
   border-radius: 1em;
+}
+
+.google-map-component {
+  position: absolute;
+  justify-content: right;
+  height: 100%;
 }

@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import SidebarSearchField from "./Components/Sidebar";
-import GoogleMapComponent from "./Components/Map";
+import GoogleMapComponent from "./Components/GoogleMapComponent";
 
 const App = () => {
   return (
@@ -21,10 +21,14 @@ const App = () => {
             </Container>
           </Navbar>
         </header>
-        <div className="sidebar-search-field">
-          <SidebarSearchField />
+        <div className="d-flex mvh-100">
+          <div className="sidebar-search-field w-50">
+            <SidebarSearchField />
+          </div>
+          <div className="google-map-content w-50">
+            <GoogleMapComponent />
+          </div>
         </div>
-        <GoogleMapComponent />
       </div>
     </Router>
   )
