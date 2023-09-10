@@ -10,7 +10,7 @@ const App = () => {
   return (
     <Router>
       <div className="App">
-        <header className="App-header">
+        <header className="App-header bg-dark">
           <Navbar>
             <Container>
               <Navbar.Brand>
@@ -21,11 +21,11 @@ const App = () => {
             </Container>
           </Navbar>
         </header>
-        <div className="d-flex mvh-100">
+        <div className="d-flex mvh-100 bg-dark align-items-center">
           <div className="w-25">
             <SidebarSearchField />
           </div>
-          <div className="google-map-content w-75">
+          <div className="w-75">
             <GoogleMapComponent />
           </div>
         </div>

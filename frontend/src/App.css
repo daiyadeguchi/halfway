@@ -3,7 +3,6 @@
 }
 
 .App-header {
-  background-color: #404040;
   display: flex;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -11,36 +10,5 @@
 }
 
 .nav-link {
-  background-color: #404040;
   color: white;
-}
-
-.sidebar-search-field {
-  background-color: #404040;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-.sidebar {
-  width: 50%;
-  height: 100%;
-  margin: auto;
-  position: relative;
-}
-
-form {
-  position: absolute;
-  top: 30%;
-}
-
-input {
-  margin-bottom: 20px;
-  border-radius: 1em;
-}
-
-.google-map-component {
-  position: absolute;
-  justify-content: right;
-  height: 100%;
 }

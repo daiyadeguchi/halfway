@@ -4,12 +4,12 @@ const SidebarSearchField = () => {
   const [postal, setPostal] = useState("");
 
   const handleSubmit = (event) => {
-    console.log("${postal}");
+    console.log(`${postal}`);
   }
 
   return (
-    <div className="sidebar">
-        <form onSubmit={handleSubmit}>
+    <div>
+        <form onSubmit={handleSubmit} className="d-flex align-items-center justify-content-center">
           <input type="text" />
           <input type="submit" value="FIND" />
         </form>
