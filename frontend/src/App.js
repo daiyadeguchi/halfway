@@ -22,7 +22,7 @@ const App = () => {
           </Navbar>
         </header>
         <div className="d-flex mvh-100">
-          <div className="sidebar-search-field w-25">
+          <div className="w-25">
             <SidebarSearchField />
           </div>
           <div className="google-map-content w-75">
