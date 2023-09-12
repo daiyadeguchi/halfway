@@ -21,7 +21,7 @@ const App = () => {
             </Container>
           </Navbar>
         </header>
-        <div className="d-flex mvh-100 bg-dark align-items-center">
+        <div className="d-flex bg-dark align-items-center">
           <div className="w-25">
             <SidebarSearchField />
           </div>
