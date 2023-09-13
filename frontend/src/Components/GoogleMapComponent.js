@@ -11,7 +11,7 @@ const GoogleMapComponent = () => {
   const mapOptions = useMemo (() => ({
     disableDefaultUI: true,
     clickableIcons: true,
-    scrollwheel: false,
+    scrollwheel: true,
   }), [])
 
   const { isLoaded } = useLoadScript({
