@@ -3,8 +3,6 @@ import { Navbar, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import SidebarSearchField from "./Components/Sidebar";
-import GoogleMapComponent from "./Components/GoogleMapComponent";
 import MainPage from "./Components/MainPage";
 
 const App = () => {
@@ -22,7 +20,9 @@ const App = () => {
             </Container>
           </Navbar>
         </header>
-        <MainPage />
+        <Routes>
+          <Route exact path="/" element={<MainPage />} />
+        </Routes>
       </div>
     </Router>
   )
