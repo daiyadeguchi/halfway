@@ -2,9 +2,10 @@ import React from "react";
 import { Navbar, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import SidebarSearchField from "./Components/Sidebar";
 import GoogleMapComponent from "./Components/GoogleMapComponent";
+import MainPage from "./Components/MainPage";
 
 const App = () => {
   return (
@@ -21,14 +22,7 @@ const App = () => {
             </Container>
           </Navbar>
         </header>
-        <div className="d-flex bg-dark align-items-center">
-          <div className="w-25">
-            <SidebarSearchField />
-          </div>
-          <div className="w-75">
-            <GoogleMapComponent />
-          </div>
-        </div>
+        <MainPage />
       </div>
     </Router>
   )
