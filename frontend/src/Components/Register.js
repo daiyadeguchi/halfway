@@ -1,17 +1,15 @@
 const Registar = () => {
   return (
-    <div className="bg-dark">
+    <div className="registar d-flex flex-fill align-items-center justify-content-center bg-dark">
       <form>
-        <a className="text-white">Name:</a>
-        <div className="row align-items-center justify-content-center mb-3">
-          <input type="text" className="col-md-8 col-sm-8 rounded" />
+        <div className="flex-row justify-content-center mb-3">
+          <input type="text" className="rounded" placeholder="Enter your username"/>
         </div>
-        <a className="text-white">Location:</a>
-        <div className="row align-items-center justify-content-center mb-3">
-          <input type="text" className="col-md-8 col-sm-8 rounded" />
+        <div className="flex-row justify-content-center mb-3">
+          <input type="text" className="rounded" placeholder="Enter your location"/>
         </div>
-        <div className="row align-items-center justify-content-center">
-          <input type="submit" value="Registar" className="col-md-6 col-sm-6 rounded" />
+        <div className="flex-row justify-content-center">
+          <input type="submit" value="Registar" className="rounded" />
         </div>
       </form>
     </div>
