@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import MainPage from "./Components/MainPage";
+import Registar from "./Components/Register";
 
 const App = () => {
   return (
@@ -21,7 +22,8 @@ const App = () => {
           </Navbar>
         </header>
         <Routes>
-          <Route exact path="/" element={<MainPage />} />
+          <Route exact path="/" element={<Registar />} />
+          <Route path="/:id" element={<MainPage />} />
         </Routes>
       </div>
     </Router>
