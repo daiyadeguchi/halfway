@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const dbConfig = require('./database/db');
 
 const userRoute = require("./routes/user_route");
+const spaceRoute = require("./routes/space_route");
 
 mongoose.Promise = global.Promise;
 mongoose.connect(dbConfig.db).then(() => {
@@ -20,6 +21,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(cors());
 app.use('/users', userRoute);
+app.use('/space', spaceRoute);
 
 const port = process.env.PORT | 4000;
 const server = app.listen(port, () => {
