@@ -15,4 +15,13 @@ router.post("/create-space", (req, res) => {
     })
 });
 
+router.get("/", async (req, res) => {
+  const space = await spaceSchema.find({})
+  if(space) {
+    res.json(space);
+  } else {
+    console.log("Error getting user");
+  }
+})
+
 module.exports = router;
