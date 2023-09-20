@@ -4,7 +4,6 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const dbConfig = require('./database/db');
 
-const userRoute = require("./routes/user_route");
 const spaceRoute = require("./routes/space_route");
 
 mongoose.Promise = global.Promise;
@@ -20,7 +19,6 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(cors());
-app.use('/users', userRoute);
 app.use('/space', spaceRoute);
 
 const port = process.env.PORT | 4000;

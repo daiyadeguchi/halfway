@@ -1,6 +1,13 @@
+import {useState } from "react";
 import axios from "axios";
+import RegisterForm from "./RegisterForm";
 
 const Registar = () => {
+  const [formValues, setFormValues] = useState({
+    username: "",
+    location: ""
+  })
+
   const onSubmit = (space) => {
     axios
       .post('http://localhost:13000/space/create-space', space)
@@ -12,19 +19,10 @@ const Registar = () => {
   };
 
   return (
-    <div className="registar d-flex flex-fill align-items-center justify-content-center bg-dark">
-      <form onSubmit={onSubmit}>
-        <div className="flex-row justify-content-center mb-3">
-          <input type="text" name="username" className="rounded" placeholder="Enter your username"/>
-        </div>
-        <div className="flex-row justify-content-center mb-3">
-          <input type="text" name="location" className="rounded" placeholder="Enter your location"/>
-        </div>
-        <div className="flex-row justify-content-center">
-          <input type="submit" value="Registar" className="rounded" />
-        </div>
-      </form>
-    </div>
+    <RegisterForm
+      initialValues={formValues}
+      onSubmit={onSubmit}
+      enableReinitialize></RegisterForm>
   )
 }
 

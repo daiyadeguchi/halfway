@@ -7,7 +7,6 @@ let spaceSchema = require("../models/Space");
 router.post("/create-space", (req, res) => {
   spaceSchema.create(req.body)
     .then(function (data) {
-      console.log(data);
       res.json(data);
     })
     .catch(function (error) {
@@ -16,12 +15,12 @@ router.post("/create-space", (req, res) => {
 });
 
 router.get("/", async (req, res) => {
-  const space = await spaceSchema.find({})
+  const space = await spaceSchema.find({});
   if(space) {
     res.json(space);
   } else {
     console.log("Error getting user");
   }
-})
+});
 
 module.exports = router;
