@@ -3,7 +3,10 @@ import axios from "axios";
 import RegisterForm from "./RegisterForm";
 
 const Registar = () => {
+  console.log((new Date().getTime()).toString(36))
   const [formValues, setFormValues] = useState({
+    space: (new Date().getTime()).toString(36),
+    isOwner: true,
     username: "",
     location: ""
   })

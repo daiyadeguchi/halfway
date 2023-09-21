@@ -2,6 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let spaceSchema = new Schema({
+  space: {
+    type: String
+  },
+  isOwner: {
+    type: Boolean
+  },
   username: {
     type: String
   },
@@ -9,7 +15,8 @@ let spaceSchema = new Schema({
     type: String
   }
 }, {
-  collection: 'space'
+  collection: 'space',
+  versionKey: false
 })
 
 module.exports = mongoose.model('Space', spaceSchema);
