@@ -1,9 +1,9 @@
 import {useState } from "react";
 import axios from "axios";
 import RegisterForm from "./RegisterForm";
+import { useNavigate } from "react-router-dom";
 
 const Registar = () => {
-  console.log((new Date().getTime()).toString(36))
   const [formValues, setFormValues] = useState({
     space: (new Date().getTime()).toString(36),
     isOwner: true,
@@ -11,12 +11,19 @@ const Registar = () => {
     location: ""
   })
 
+  const navigate = useNavigate();
+
   const onSubmit = (space) => {
     axios
       .post('http://localhost:13000/space/create-space', space)
       .then(res => {
-        if (res.status === 200) alert('Space successfully created');
-        else Promise.reject();
+        if (res.status === 200) {
+          console.log('Space successfully created');
+          // console.log(res.data["space"])
+          navigate('/' + res.data["space"])
+        } else {
+          Promise.reject();
+        }
       })
       .catch (err => alert("Something went wrong"));
   };
