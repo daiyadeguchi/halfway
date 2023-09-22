@@ -23,4 +23,14 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/:id", (req, res) => {
+  spaceSchema.find({ "space": req.params.id })
+  .then(function (data) {
+    res.json(data);
+  })
+  .catch(function (error) {
+    console.log(error);
+  })
+})
+
 module.exports = router;
