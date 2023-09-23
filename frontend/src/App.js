@@ -24,6 +24,7 @@ const App = () => {
         <Routes>
           <Route exact path="/" element={<Registar />} />
           <Route path="/:id" element={<MainPage />} />
+          <Route path="add-user/:id" element={<Registar />} />
         </Routes>
       </div>
     </Router>
