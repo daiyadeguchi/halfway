@@ -1,11 +1,23 @@
-import React, { useState } from "react";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
-const SidebarSearchField = () => {
-  const [postal, setPostal] = useState("");
+ const SidebarSearchField = () => {
+  const { id } = useParams();
+  let users = new Array();
 
-  const handleSubmit = (event) => {
-    console.log(`${postal}`);
-  }
+  useEffect(() => {
+    axios
+      .get("http://localhost:13000/space/" + id)
+      .then(({ data }) => {
+        for(let i = 0; i < data.length; i++) {
+          users.push(data[i].username);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   return (
     <div>

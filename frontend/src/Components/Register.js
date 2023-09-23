@@ -1,4 +1,4 @@
-import {useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import RegisterForm from "./RegisterForm";
 import { useNavigate } from "react-router-dom";
@@ -19,7 +19,6 @@ const Registar = () => {
       .then(res => {
         if (res.status === 200) {
           console.log('Space successfully created');
-          // console.log(res.data["space"])
           navigate('/' + res.data["space"])
         } else {
           Promise.reject();
