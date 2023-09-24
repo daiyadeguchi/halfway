@@ -5,6 +5,7 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import MainPage from "./Components/MainPage";
 import Registar from "./Components/Register";
+import AddUser from "./Components/AddUser";
 
 const App = () => {
   return (
@@ -24,7 +25,7 @@ const App = () => {
         <Routes>
           <Route exact path="/" element={<Registar />} />
           <Route path="/:id" element={<MainPage />} />
-          <Route path="add-user/:id" element={<Registar />} />
+          <Route path="add-user/:id" element={<AddUser />} />
         </Routes>
       </div>
     </Router>

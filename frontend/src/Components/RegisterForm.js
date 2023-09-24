@@ -16,7 +16,9 @@ const RegisterForm = (props) => {
             <Field name="location" type="text" className="form-control" />
             <ErrorMessage name="username" className="d-block invalid-feedback" component="span" />
           </FormGroup>
-          <Button variant="danger" size="lg" block="block" type="submit" className="mt-3">Registar</Button>
+          <Button variant="danger" size="lg" block="block" type="submit" className="mt-3">
+            {props.children}
+          </Button>
         </Form>
       </Formik>
     </div>

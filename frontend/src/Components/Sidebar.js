@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import UserList from "./UserList";
 
@@ -27,7 +27,12 @@ import UserList from "./UserList";
             <UserList className="col-md-8 col-sm-8" users={users}/> 
           </div>
           <div className="row align-items-center justify-content-center">
-            <input type="submit" value="FIND" className="col-md-6 col-sm-6 rounded" />
+            {/* <input type="submit" value="Add User" className="col-md-6 col-sm-6 rounded" /> */}
+            <Link 
+              className="col-md-6 col-sm-6"
+              to={"/add-user/" + id}>
+              Add User
+            </Link>
           </div>
         </form>
     </div>
