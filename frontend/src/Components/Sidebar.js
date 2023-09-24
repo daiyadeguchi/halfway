@@ -27,9 +27,8 @@ import UserList from "./UserList";
             <UserList className="col-md-8 col-sm-8" users={users}/> 
           </div>
           <div className="row align-items-center justify-content-center">
-            {/* <input type="submit" value="Add User" className="col-md-6 col-sm-6 rounded" /> */}
             <Link 
-              className="col-md-6 col-sm-6"
+              className="col-md-6 col-sm-6 btn btn-info"
               to={"/add-user/" + id}>
               Add User
             </Link>
