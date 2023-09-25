@@ -31,6 +31,18 @@ router.get("/:id", (req, res) => {
   .catch(function (error) {
     console.log(error);
   })
-})
+});
+
+router.delete("/delete-user/:id", (req, res) => {
+  spaceSchema.findByIdAndRemove(req.params.id)
+    .then(function (data) {
+      res.status(200).json({
+        msg: data,
+      })
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+});
 
 module.exports = router;
