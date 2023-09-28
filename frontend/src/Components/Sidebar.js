@@ -13,13 +13,13 @@ import UserList from "./UserList";
       .get("http://localhost:13000/space/" + id)
       .then(({ data }) => {
         allUsers.push(data);
-        setUsers(allUsers)
+        setUsers(allUsers[0]);
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
-
+  
   return (
     <div>
         <form>
