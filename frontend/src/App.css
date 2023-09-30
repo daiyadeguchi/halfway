@@ -3,17 +3,6 @@
   height: 100%;
 }
 
-.App-header {
-  display: flex;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.nav-link {
-  color: white;
-}
-
 .registar {
-  height: calc(100vh - 86px);
+  height: 100vh;
 }
