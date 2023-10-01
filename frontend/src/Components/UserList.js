@@ -1,27 +1,20 @@
-import { Button, FormGroup } from "react-bootstrap"
-import axios from "axios";
+import { useState, useEffect } from "react";
+import { Button } from "react-bootstrap"
 
 const UserList = (props) => {
-  let users = props.users
-  const onSubmit = (user) => {
-    axios
-      .delete("http://localhost:13000/space/delete-user/" + user._id)
-      .then((res) => {
-        if (res.status === 200) {
-          window.location.reload();
-        } else Promise.reject()
-      })
-      .catch((error) => alert("Something went wrong"))
-  }
+  const [users, setUsers] = useState([])
+  useEffect(() => {
+    setUsers(props.users)
+  })
 
   if(users.length > 0) {
     const userItems = users.map((user) =>
-      <tbody>
+      <tbody key={user._id}>
         <tr>
           <td className="text-white">{user.username}</td>
           <td className="text-white">{user.location}</td>
           <td>
-            <Button variant="outline-danger" size="sm" block="block" type="submit" onSubmit={onSubmit}>X</Button>
+            <Button variant="outline-danger" size="sm" block="block" type="submit" id={user._id}>X</Button>
           </td>
         </tr>
       </tbody>

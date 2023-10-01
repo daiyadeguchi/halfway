@@ -19,21 +19,33 @@ import UserList from "./UserList";
         console.log(error);
       });
   }, []);
+
+  const onSubmit = (user) => {
+    user.preventDefault()
+    axios
+      .delete("http://localhost:13000/space/delete-user/" + user.nativeEvent.submitter.id)
+      .then((res) => {
+        if (res.status === 200) {
+          window.location.reload();
+        } else Promise.reject();
+      })
+      .catch((err) => alert("Something went wrong"))
+  }
   
   return (
     <div>
-        <form>
-          <div className="mb-3">
-            <UserList users={users}/> 
-          </div>
-          <div className="row align-items-center justify-content-center">
-            <Link 
-              className="col-md-6 col-sm-6 btn btn-info"
-              to={"/add-user/" + id}>
-              Add User
-            </Link>
-          </div>
+      <div className="mb-3">
+        <form onSubmit={onSubmit}>
+          <UserList users={users}/> 
         </form>
+      </div>
+      <div className="row align-items-center justify-content-center">
+        <Link 
+          className="col-md-6 col-sm-6 btn btn-info"
+          to={"/add-user/" + id}>
+          Add User
+        </Link>
+      </div>
     </div>
   )
 };
