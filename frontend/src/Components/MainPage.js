@@ -27,8 +27,8 @@ const MainPage = () => {
         <Offcanvas.Header closeButton className="text-white">
           <Offcanvas.Title>User Location</Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>
-          <div className="d-flex bg-dark align-items-center">
+        <Offcanvas.Body className="w-100">
+          <div className="d-flex justify-content-center bg-dark">
             <SidebarSearchField />
           </div>
         </Offcanvas.Body>

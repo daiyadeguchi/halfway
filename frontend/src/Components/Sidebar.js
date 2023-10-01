@@ -23,8 +23,8 @@ import UserList from "./UserList";
   return (
     <div>
         <form>
-          <div className="row align-items-center justify-content-center mb-3 mx-2">
-            <UserList className="col-md-8 col-sm-8" users={users}/> 
+          <div className="mb-3">
+            <UserList users={users}/> 
           </div>
           <div className="row align-items-center justify-content-center">
             <Link 

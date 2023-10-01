@@ -18,9 +18,9 @@ const UserList = (props) => {
     const userItems = users.map((user) =>
       <tbody>
         <tr>
-          <td className="mb-3 text-white">{user.username}</td>
-          <td className="mb-3 text-white">{user.location}</td>
-          <td className="mb-3">
+          <td className="text-white">{user.username}</td>
+          <td className="text-white">{user.location}</td>
+          <td>
             <Button variant="outline-danger" size="sm" block="block" type="submit" onSubmit={onSubmit}>X</Button>
           </td>
         </tr>
