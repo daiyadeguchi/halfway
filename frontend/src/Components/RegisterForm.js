@@ -7,12 +7,12 @@ const RegisterForm = (props) => {
       <Formik {...props}>
         <Form>
           <FormGroup>
-            <a>Username:</a>
+            <a className="d-flex align-items-left text-white text-decoration-none">Username:</a>
             <Field name="username" type="text" className="form-control" />
             <ErrorMessage name="username" className="d-block invalid-feedback" component="span" />
           </FormGroup>
           <FormGroup>
-            <a>Location:</a>
+            <a className="d-flex align-items-left text-white text-decoration-none">Location:</a>
             <Field name="location" type="text" className="form-control" />
             <ErrorMessage name="username" className="d-block invalid-feedback" component="span" />
           </FormGroup>
