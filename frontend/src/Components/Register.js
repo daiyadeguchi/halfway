@@ -29,9 +29,8 @@ const Registar = () => {
 
   return (
     <RegisterForm
-      initialValues={formValues}
       onSubmit={onSubmit}
-      enableReinitialize>
+      >
         Register
       </RegisterForm>
   )

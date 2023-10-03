@@ -1,26 +1,27 @@
+import { useRef, useEffect } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { FormGroup, Button } from "react-bootstrap";
+import { usePlacesWidget } from "react-google-autocomplete";
 
 const RegisterForm = (props) => {
+  const inputRef = useRef();
+  const options = {
+    fields: ["formatted_address", "geometry", "name"],
+    strictBounds: false,
+  }
+
+  const { ref } = usePlacesWidget({
+    apiKey: process.env.REACT_APP_MAPS_API_KEY,
+    onPlaceSelected: (place) => console.log(place)
+  })
+  
   return (
     <div className="registar d-flex flex-fill align-items-center justify-content-center bg-dark">
-      <Formik {...props}>
-        <Form>
-          <FormGroup>
-            <a className="d-flex align-items-left text-white text-decoration-none">Username:</a>
-            <Field name="username" type="text" className="form-control" />
-            <ErrorMessage name="username" className="d-block invalid-feedback" component="span" />
-          </FormGroup>
-          <FormGroup>
-            <a className="d-flex align-items-left text-white text-decoration-none">Location:</a>
-            <Field name="location" type="text" className="form-control" />
-            <ErrorMessage name="username" className="d-block invalid-feedback" component="span" />
-          </FormGroup>
-          <Button variant="danger" size="lg" block="block" type="submit" className="mt-3">
-            {props.children}
-          </Button>
-        </Form>
-      </Formik>
+        <input type="text" name="username" className="form-control"/>
+        <input type="text" name="location" className="form-control" ref={ref} />
+        <Button variant="danger" size="lg" block="block" type="submit" className="mt-3">
+          REGISTER 
+        </Button>
     </div>
   );
 };
