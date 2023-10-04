@@ -12,16 +12,15 @@ const RegisterForm = (props) => {
 
   const { ref } = usePlacesWidget({
     apiKey: process.env.REACT_APP_MAPS_API_KEY,
-    onPlaceSelected: (place) => console.log(place)
   })
   
   return (
-    <div className="registar d-flex flex-fill align-items-center justify-content-center bg-dark">
-        <input type="text" name="username" className="form-control"/>
-        <input type="text" name="location" className="form-control" ref={ref} />
-        <Button variant="danger" size="lg" block="block" type="submit" className="mt-3">
-          REGISTER 
-        </Button>
+    <div className="registar d-flex align-items-center justify-content-center bg-dark">
+      <input type="text" name="username" className="form-control"/>
+      <input type="text" name="location" className="form-control" ref={ref} />
+      <Button variant="danger" size="lg" block="block" type="submit" className="mt-3">
+        REGISTER 
+      </Button>
     </div>
   );
 };
