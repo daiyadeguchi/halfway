@@ -25,7 +25,6 @@ const GoogleMapComponent = () => {
       zoom={14}
       options={mapOptions}
       mapContainerStyle={{ width: '100%', height: 'calc(100vh - 86px)' }}
-      onLoad={() => console.log("Map component loaded...")}
     ></GoogleMap>
   ) : <></>;
 };
