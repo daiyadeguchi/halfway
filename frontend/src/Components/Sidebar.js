@@ -39,7 +39,7 @@ import UserList from "./UserList";
           <UserList users={users}/> 
         </form>
       </div>
-      <div className="row align-items-center justify-content-center">
+      <div className="row d-flex align-items-center justify-content-center">
         <Link 
           className="col-md-6 col-sm-6 btn btn-info"
           to={"/add-user/" + id}>
