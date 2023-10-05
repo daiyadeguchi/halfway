@@ -1,10 +1,7 @@
-import { useRef, useEffect } from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import { FormGroup, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { usePlacesWidget } from "react-google-autocomplete";
 
 const RegisterForm = (props) => {
-  const inputRef = useRef();
   const options = {
     fields: ["formatted_address", "geometry", "name"],
     strictBounds: false,
@@ -12,6 +9,7 @@ const RegisterForm = (props) => {
 
   const { ref } = usePlacesWidget({
     apiKey: process.env.REACT_APP_MAPS_API_KEY,
+    options: options
   })
   
   return (
