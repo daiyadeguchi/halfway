@@ -8,6 +8,14 @@ const Registar = () => {
 
   const onSubmit = (space) => {
     space.preventDefault()
+    const geocoder = new google.maps.Geocoder();
+    geocoder.geocode({"address": space.target[1].value}, function(results, status) {
+      if(status === google.maps.GeocoderStatus.OK) {
+        const lat = results[0].geometry.location.lat();
+        const lng = results[0].geometry.location.lng();
+        console.log(lat, lng)
+      }
+    })
     axios
       .post('http://localhost:13000/space/create-space', {
         space: (new Date().getTime()).toString(36),
