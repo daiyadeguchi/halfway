@@ -3,7 +3,8 @@ import { usePlacesWidget } from "react-google-autocomplete";
 
 const RegisterForm = () => {
   const options = {
-    fields: ["formatted_address", "geometry", "name"],
+    fields: ["address_components", "geometry", "name"],
+    types: ["train_station"],
     strictBounds: false,
   }
 
