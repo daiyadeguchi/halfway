@@ -13,6 +13,12 @@ let spaceSchema = new Schema({
   },
   location: {
     type: String
+  },
+  lat: {
+    type: String
+  },
+  lng: {
+    type: String
   }
 }, {
   collection: 'space',
