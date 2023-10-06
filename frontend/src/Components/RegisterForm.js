@@ -1,7 +1,7 @@
 import { Button } from "react-bootstrap";
 import { usePlacesWidget } from "react-google-autocomplete";
 
-const RegisterForm = (props) => {
+const RegisterForm = () => {
   const options = {
     fields: ["formatted_address", "geometry", "name"],
     strictBounds: false,
