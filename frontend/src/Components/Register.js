@@ -13,8 +13,7 @@ const Registar = () => {
       if(status === google.maps.GeocoderStatus.OK) {
         const lat = results[0].geometry.location.lat();
         const lng = results[0].geometry.location.lng();
-        
-        console.log(lat, lng)
+       
         axios
           .post('http://localhost:13000/space/create-space', {
             space: (new Date().getTime()).toString(36),
@@ -32,7 +31,7 @@ const Registar = () => {
               Promise.reject();
             }
           })
-          .catch (err => alert("Something went wrong"));
+          .catch (err => alert("Something went wrong: " + err));
         }
       }
     )
