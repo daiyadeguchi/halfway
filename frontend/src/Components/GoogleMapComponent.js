@@ -1,12 +1,26 @@
-import { useMemo } from "react";
+import { useMemo, useState, useEffect, useCallback } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 import { GoogleMap, useLoadScript } from "@react-google-maps/api";
 
 const GoogleMapComponent = () => {
+  const { id } = useParams();
+  let allUsers = new Array();
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:13000/space/" + id)
+      .then(({ data }) => {
+        allUsers.push(data);
+        setUsers(allUsers[0]);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+  
   const libraries = useMemo(() => ['places'], []);
-  const center = useMemo(() => ({
-    lat: 35.652832,
-    lng: 139.839478
-  }), []);
 
   const mapOptions = useMemo (() => ({
     disableDefaultUI: true,
@@ -19,6 +33,11 @@ const GoogleMapComponent = () => {
     libraries: libraries,
   });
 
+  let center = {
+    lat: users.length > 0 ? parseFloat(users[0].lat) : 35.652832,
+    lng: users.length > 0 ? parseFloat(users[0].lng) : 139.839478,
+  };
+  
   return isLoaded ? (
     <GoogleMap
       center={center}
