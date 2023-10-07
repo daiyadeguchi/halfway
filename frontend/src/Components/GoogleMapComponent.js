@@ -1,7 +1,7 @@
-import { useMemo, useState, useEffect, useCallback } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { GoogleMap, useLoadScript } from "@react-google-maps/api";
+import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 
 const GoogleMapComponent = () => {
   const { id } = useParams();
@@ -44,7 +44,9 @@ const GoogleMapComponent = () => {
       zoom={14}
       options={mapOptions}
       mapContainerStyle={{ width: '100%', height: 'calc(100vh - 86px)' }}
-    ></GoogleMap>
+    >
+      <Marker position={center} />
+    </GoogleMap>
   ) : <></>;
 };
 
