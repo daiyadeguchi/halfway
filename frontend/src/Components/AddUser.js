@@ -20,7 +20,8 @@ const AddUser = () => {
             username: newUser.target[0].value,
             location: newUser.target[1].value,
             lat: lat,
-            lng: lng
+            lng: lng,
+            dateModified: Date.now()
           })
           .then(res => {
             if (res.status === 200) {

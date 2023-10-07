@@ -19,6 +19,9 @@ let spaceSchema = new Schema({
   },
   lng: {
     type: String
+  },
+  dateModified: {
+    type: Date
   }
 }, {
   collection: 'space',

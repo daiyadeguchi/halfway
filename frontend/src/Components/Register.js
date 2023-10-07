@@ -21,7 +21,8 @@ const Registar = () => {
             username: space.target[0].value,
             location: space.target[1].value,
             lat: lat,
-            lng: lng
+            lng: lng,
+            dateModified: Date.now()
           })
           .then(res => {
             if (res.status === 200) {
