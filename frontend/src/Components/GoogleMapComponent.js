@@ -55,19 +55,6 @@ const GoogleMapComponent = () => {
     ): <></>;
   }
 
-
-  
-  // return isLoaded ? (
-  //   <GoogleMap
-  //     center={center}
-  //     zoom={14}
-  //     options={mapOptions}
-  //     mapContainerStyle={{ width: '100%', height: 'calc(100vh - 86px)' }}
-  //   >
-  //     <Marker position={center} />
-  //   </GoogleMap>
-  // ) : <></>;
-
 };
 
 export default GoogleMapComponent;
