@@ -5,10 +5,10 @@ import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 
 const GoogleMapComponent = () => {
   const { id } = useParams();
-  let allUsers = new Array();
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
+    let allUsers = [];
     axios
       .get("http://localhost:13000/space/" + id)
       .then(({ data }) => {
@@ -18,7 +18,7 @@ const GoogleMapComponent = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [id]);
   
   const libraries = useMemo(() => ['places'], []);
 
