@@ -2,6 +2,7 @@ import { useMemo, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
+import calculateHalfway from "../location/HalfwayCalculator";
 
 const GoogleMapComponent = () => {
   const { id } = useParams();
@@ -33,10 +34,11 @@ const GoogleMapComponent = () => {
     libraries: libraries,
   })
 
+  const latlng = calculateHalfway(users);
   let center = {
-    lat: users.length > 0 ? parseFloat(users[0].lat) : 35.652832,
-    lng: users.length > 0 ? parseFloat(users[0].lng) : 139.839478,
-  };
+    lat: latlng[0],
+    lng: latlng[1]
+  }
 
   if(users.length > 0) {
     const centerMarkers = users.map((user) => 
