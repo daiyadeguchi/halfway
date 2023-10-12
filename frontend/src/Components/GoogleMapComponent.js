@@ -41,7 +41,7 @@ const GoogleMapComponent = () => {
   }
 
   if(users.length > 0) {
-    const centerMarkers = users.map((user) => 
+    const markers = users.map((user) => 
       <Marker position={{lat: parseFloat(user.lat), lng: parseFloat(user.lng)}}/>
     )
 
@@ -52,7 +52,7 @@ const GoogleMapComponent = () => {
         options={mapOptions}
         mapContainerStyle={{ width: '100%', height: 'calc(100vh - 86px)' }}
       >
-        {centerMarkers}
+        {markers}
       </GoogleMap> 
     ): <></>;
   }
