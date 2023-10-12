@@ -53,6 +53,10 @@ const GoogleMapComponent = () => {
         mapContainerStyle={{ width: '100%', height: 'calc(100vh - 86px)' }}
       >
         {markers}
+        <Marker 
+          position={center} 
+          icon={'http://maps.google.com/mapfiles/kml/paddle/blu-blank.png'}
+        />
       </GoogleMap> 
     ): <></>;
   }
