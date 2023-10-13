@@ -16,8 +16,8 @@ const RegisterForm = () => {
   return (
     <div className="registar row d-flex align-items-center justify-content-center bg-dark">
       <div className="h-25 row d-flex align-items-center justify-content-center">
-        <input type="text" name="username" className="form-control-lg col-sm-8 col-md-8 rounded" placeholder="Enter username"/>
-        <input type="text" name="location" className="form-control-lg col-sm-8 col-md-8 rounded" ref={ref} />
+        <input type="text" name="username" className="form-control-lg col-sm-8 col-md-8 rounded" placeholder="Enter username" required/>
+        <input type="text" name="location" className="form-control-lg col-sm-8 col-md-8 rounded" ref={ref} required/>
         <Button variant="danger" size="lg" block="block" type="submit" className="col-md-6">
           REGISTER 
         </Button>
