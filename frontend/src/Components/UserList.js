@@ -15,7 +15,7 @@ const UserList = (props) => {
     const userItems = users.map((user) =>
       <tbody key={user._id}>
         <tr>
-          <td className="text-white">{user.username}</td>
+          <td className="text-white">{user.username}: </td>
           <td className="text-white">{user.location}</td>
           <td>
             <Button variant="outline-danger" size="sm" block="block" type="submit" id={user._id} hidden={isTheLastUser}>X</Button>
