@@ -45,4 +45,18 @@ router.delete("/delete-user/:id", (req, res) => {
     })
 });
 
+router.delete("/delete-expired-user", (req, res) => {
+  let d = new Date();
+  d.setDate(d.getDate() - 3);
+  spaceSchema.find({ dateModified: {$lt: d}}).deleteMany()
+    .then(function (data){
+      res.status(200).json({
+        msg: data,
+      })
+    })
+    .catch(function (error) {
+      console.log(error)
+    })
+})
+
 module.exports = router;
