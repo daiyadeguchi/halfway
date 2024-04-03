@@ -71,4 +71,8 @@ router.delete("/delete-expired-user", (req, res) => {
     })
 })
 
+router.delete("/delete-test", (req, res) => {
+
+})
+
 module.exports = router;
